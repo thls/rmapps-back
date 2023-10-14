@@ -1,0 +1,37 @@
+# Compose file for development environment
+version: "3.8"
+
+services:
+  back:
+    image: rmapps-back:v1
+    restart: always
+    volumes:
+      - .:/app
+    env_file:
+      - ./.env
+    ports:
+      - 3000:3000
+    # start redu-api container only after ensure that db is accepting connections
+    # depends_on:
+    #   db:
+    #     condition: service_healthy
+
+  # db:
+  #   image: postgres:13  # Use the PostgreSQL 13 image
+  #   restart: always
+  #   environment:
+  #     POSTGRES_USER: ${DB_USER}
+  #     POSTGRES_PASSWORD: ${DB_PASSWORD}
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data  # Adjust the volume path if needed
+  #   ports:
+  #     - 5432:5432  # Map host port to container port
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d postgres -h localhost -p 5432"]
+  #     start_period: 5s
+  #     interval: 5s
+  #     timeout: 5s
+  #     retries: 55
+
+volumes:
+  postgres_data:
