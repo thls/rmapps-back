@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_10_15_143118) do
+ActiveRecord::Schema[7.1].define(version: 2023_10_15_175547) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -76,6 +76,19 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_15_143118) do
     t.index ["cnpj"], name: "index_companies_on_cnpj", unique: true
   end
 
+  create_table "equipment", force: :cascade do |t|
+    t.bigint "company_id", null: false
+    t.bigint "user_id", null: false
+    t.string "name", null: false
+    t.string "serial_number", null: false
+    t.date "acquisition_date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_equipment_on_company_id"
+    t.index ["serial_number"], name: "index_equipment_on_serial_number"
+    t.index ["user_id"], name: "index_equipment_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -94,4 +107,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_15_143118) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "addresses", "companies"
   add_foreign_key "administrators", "users"
+  add_foreign_key "equipment", "companies"
+  add_foreign_key "equipment", "users"
 end
