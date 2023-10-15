@@ -13,4 +13,6 @@ class Company < ApplicationRecord
 
   # Define a has_one association with the Address model, and specify dependent: :destroy
   has_one :address, dependent: :destroy
+
+  has_one_attached :logo
 end
