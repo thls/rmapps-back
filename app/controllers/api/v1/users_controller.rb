@@ -2,7 +2,7 @@ module Api::V1
   class UsersController < BaseController
     # GET /api/v1/users
     def index
-      render json: @users
+      render json: @users.page(params[:page])
     end
 
     # GET /api/v1/users/1
