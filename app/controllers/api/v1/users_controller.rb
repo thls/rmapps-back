@@ -38,7 +38,7 @@ module Api::V1
     private
       # Only allow a list of trusted parameters through.
       def user_params
-        params.require(:user).permit(:email, :password)
+        params.require(:user).permit(:email)
       end
   end
 end
