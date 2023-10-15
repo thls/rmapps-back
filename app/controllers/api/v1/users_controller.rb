@@ -32,13 +32,13 @@ module Api::V1
 
     # DELETE /api/v1/users/1
     def destroy
-      @user.destroy
+      @user.destroy!
     end
 
     private
-    # Only allow a list of trusted parameters through.
-    def user_params
-      params.require(:user).permit(:email)
-    end
+      # Only allow a list of trusted parameters through.
+      def user_params
+        params.require(:user).permit(:email)
+      end
   end
 end

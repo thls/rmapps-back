@@ -32,13 +32,13 @@ module Api::V1
 
     # DELETE /api/v1/companies/1
     def destroy
-      @company.destroy
+      @company.destroy!
     end
 
     private
-    # Only allow a list of trusted parameters through.
-    def company_params
-      params.require(:company)
-    end
+      # Only allow a list of trusted parameters through.
+      def company_params
+        params.require(:company)
+      end
   end
 end
