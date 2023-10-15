@@ -1,0 +1,9 @@
+# Additional translations at https://github.com/heartcombo/devise/wiki/I18n
+
+pt-BR:
+  devise:
+    sessions:
+      signed_in: Você conseguiu logar com sucesso
+      signed_out: Você conseguiu deslogar com sucesso
+      already_signed_out: Você conseguiu deslogar com sucesso
+      not_found: Não foi possível encontrar uma sessão ativa

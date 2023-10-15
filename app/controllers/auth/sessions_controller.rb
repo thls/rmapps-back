@@ -6,14 +6,15 @@ class Auth::SessionsController < Devise::SessionsController
   private
 
   def respond_with(resource, _opts = {})
-    render json: { message: 'Logged in sucessfully.' }, status: :ok
+    render json: { message: I18n.t("devise.sessions.signed_in") }, status: :ok
   end
 
   def respond_to_on_destroy
+    # When the client sends a valid token
     if current_user
-      render json: { message: "logged out successfully" }, status: :ok
+      render json: { message: I18n.t("devise.sessions.signed_out") }, status: :ok
     else
-      render json: { message: "Couldn't find an active session." }, status: :unauthorized
+      render json: { message: I18n.t("devise.sessions.not_found") }, status: :unauthorized
     end
   end
 end

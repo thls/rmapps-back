@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    attributes:
+      user:
+        email:
+          one: "E-mail"
+          other: E-mails
+        password:
+          one: Senha
+          other: Senhas

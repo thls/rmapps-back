@@ -1,0 +1,39 @@
+pt-BR:
+  errors:
+    # The default format to use in full error messages.
+    format: "%{attribute} %{message}"
+
+    # The values :model, :attribute and :value are always available for interpolation
+    # The value :count is available when applicable. Can be used for pluralization.
+    messages:
+      model_invalid: "Validation failed: %{errors}"
+      inclusion: "não está incluso na lista"
+      exclusion: "é reservado"
+      invalid: "é inválido"
+      confirmation: "não é igual a %{attribute}"
+      accepted: "deve ser aceito"
+      empty: "não pode ser vazio"
+      blank: "não pode ser deixado em branco"
+      present: "deve ser deixado em branco"
+      too_long:
+        one: "é muito longo (deve ser no máximo um caracter)"
+        other: "é muito longo (deve ser no máximo %{count} caracteres)"
+      password_too_long: "senha muito longa"
+      too_short:
+        one: "é muito curto (deve ser no mínimo 1 caracter)"
+        other: "é muito curto (deve ser no mínimo %{count} caracteres)"
+      wrong_length:
+        one: "o tamanho está incorreto (deve ser um caracter)"
+        other: "o tamanho está incorreto (deve ser %{count} caracteres)"
+      not_a_number: "não é um número"
+      not_an_integer: "deve ser um inteiro"
+      greater_than: "deve ser maior que %{count}"
+      greater_than_or_equal_to: "deve ser maior ou igual a %{count}"
+      equal_to: "deve ser igual a %{count}"
+      less_than: "deve ser menor que %{count}"
+      less_than_or_equal_to: "deve ser menor ou igual a %{count}"
+      other_than: "deve ser diferente de %{count}"
+      in: "deve estar entre %{count}"
+      odd: "deve ser ímpar"
+      even: "deve ser par"
+      taken: "já está em uso"
