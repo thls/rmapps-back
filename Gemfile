@@ -37,6 +37,7 @@ gem "bootsnap", require: false
 gem "rack-cors"
 
 # Put gems in alphabetic order
+gem 'cancancan', '~> 3.5'
 gem 'devise'
 gem 'devise-jwt'
 
