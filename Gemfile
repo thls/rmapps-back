@@ -48,6 +48,10 @@ gem 'multi_json', '~> 1.15'
 gem 'responders', '~> 3.1'
 gem 'roar-rails', '~> 1.2'
 
+# Add the 'will_paginate' gem to enable pagination in the application.
+# This gem provides convenient pagination features for ActiveRecord queries.
+gem 'will_paginate', '~> 4.0'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]

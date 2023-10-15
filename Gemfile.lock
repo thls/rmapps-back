@@ -237,6 +237,7 @@ GEM
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    will_paginate (4.0.0)
     zeitwerk (2.6.12)
 
 PLATFORMS
@@ -257,6 +258,7 @@ DEPENDENCIES
   responders (~> 3.1)
   roar-rails (~> 1.2)
   tzinfo-data
+  will_paginate (~> 4.0)
 
 RUBY VERSION
    ruby 3.2.2p53
