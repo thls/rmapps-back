@@ -10,9 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_10_15_124314) do
+ActiveRecord::Schema[7.1].define(version: 2023_10_15_125729) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.string "cep", null: false
+    t.string "state", null: false
+    t.string "city", null: false
+    t.string "district", null: false
+    t.string "street", null: false
+    t.integer "number", null: false
+    t.bigint "company_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cep"], name: "index_addresses_on_cep"
+    t.index ["city"], name: "index_addresses_on_city"
+    t.index ["company_id"], name: "index_addresses_on_company_id"
+    t.index ["district"], name: "index_addresses_on_district"
+    t.index ["state"], name: "index_addresses_on_state"
+    t.index ["street"], name: "index_addresses_on_street"
+  end
 
   create_table "administrators", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -44,5 +62,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_15_124314) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "addresses", "companies"
   add_foreign_key "administrators", "users"
 end
