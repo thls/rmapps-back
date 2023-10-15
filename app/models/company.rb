@@ -14,5 +14,6 @@ class Company < ApplicationRecord
   # Define a has_one association with the Address model, and specify dependent: :destroy
   has_one :address, dependent: :destroy
 
+  # Define a has_one_attached association for logo images using Active Storage
   has_one_attached :logo
 end
