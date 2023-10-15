@@ -3,7 +3,7 @@ version: "3.8"
 
 services:
   back:
-    image: rmapps-back:v1
+    image: rmapps-back
     restart: always
     volumes:
       - .:/app
