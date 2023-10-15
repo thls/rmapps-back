@@ -28,5 +28,9 @@ module Api
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # Set the default number of items displayed per page to 5.
+    # You can adjust this value to control the pagination behavior.
+    config.per_page = 10
   end
 end
