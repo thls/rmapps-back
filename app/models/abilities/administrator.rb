@@ -3,8 +3,8 @@ module Abilities
     include CanCan::Ability
 
     def initialize(user)
-      # Imports all Manager abilities
-      merge Abilities::Manager.new(user)
+      # Imports all Member abilities
+      merge Abilities::Member.new(user)
 
       # Can manage all Users
       can :manage, User
