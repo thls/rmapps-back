@@ -38,8 +38,15 @@ gem "rack-cors"
 
 # Put gems in alphabetic order
 gem 'cancancan', '~> 3.5'
+
+# Authentication
 gem 'devise'
 gem 'devise-jwt'
+
+# Decorators for api responses
+gem 'multi_json', '~> 1.15'
+gem 'responders', '~> 3.1'
+gem 'roar-rails', '~> 1.2'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
