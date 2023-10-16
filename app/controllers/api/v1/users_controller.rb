@@ -23,7 +23,7 @@ module Api::V1
 
     # PATCH/PUT /api/v1/users/1
     def update
-      if @user.update(user_params)
+      if @user.update(user_params.except(:password))
         render json: @user
       else
         render json: @user, represent_with: ModelErrorsRepresenter, status: :unprocessable_entity
@@ -38,7 +38,7 @@ module Api::V1
     private
       # Only allow a list of trusted parameters through.
       def user_params
-        params.require(:user).permit(:email)
+        params.require(:user).permit(:email, :password)
       end
   end
 end
