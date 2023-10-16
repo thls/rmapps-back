@@ -1,3 +1,6 @@
+# Print a message indicating that the companies seed is running
+puts 'Running companies seed...'
+
 # Method to generate a random CNPJ-like string with formatting
 def generate_random_cnpj
   cnpj = ''
