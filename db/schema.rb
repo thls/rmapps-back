@@ -78,7 +78,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_15_175547) do
 
   create_table "equipment", force: :cascade do |t|
     t.bigint "company_id", null: false
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.string "name", null: false
     t.string "serial_number", null: false
     t.date "acquisition_date", null: false
