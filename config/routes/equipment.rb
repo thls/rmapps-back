@@ -1,1 +1,1 @@
-resources :equipment
+resources :equipment, except: :create
