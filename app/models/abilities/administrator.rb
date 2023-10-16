@@ -3,12 +3,16 @@ module Abilities
     include CanCan::Ability
 
     def initialize(user)
-      # Imports all Member abilities
+      # Inherit abilities from the Member role
       merge Abilities::Member.new(user)
 
-      # Can manage all Users
+      # Users
+      # Administrators can manage all Users
       can :manage, User
-    end
 
+      # Companies
+      # Administrators can manage all Companies
+      can :manage, Company
+    end
   end
 end

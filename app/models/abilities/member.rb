@@ -3,16 +3,20 @@ module Abilities
     include CanCan::Ability
 
     def initialize(user)
-      # Imports permissions for anyone
+      # Inherit permissions from the Everyone role
       merge Abilities::Everyone.new(user)
 
-      # All members can read any User
+      # Users
+      # All members can view any User's profile
       can :read, User
-      # Only can manage a User if it's self
+      # Members can manage (update or delete) their own User profile
       can :manage, User, id: user.id
-      # Can't create a User
+      # Members cannot create new Users
       cannot :create, User
-    end
 
+      # Companies
+      # Members can view Companies associated with equipment they own
+      can :read, Company, equipment: { user_id: user.id }
+    end
   end
 end
