@@ -13,6 +13,10 @@ module Abilities
       # Companies
       # Administrators can manage all Companies
       can :manage, Company
+
+      # Equipment
+      # Administrators can manage all Equipment
+      can :manage, Equipment
     end
   end
 end

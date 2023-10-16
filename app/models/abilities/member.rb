@@ -17,6 +17,9 @@ module Abilities
       # Companies
       # Members can view Companies associated with equipment they own
       can :read, Company, equipment: { user_id: user.id }
+
+      # Equipment
+      can [:read, :update], Equipment, responsible_user: user
     end
   end
 end
