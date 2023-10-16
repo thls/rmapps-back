@@ -9,19 +9,6 @@ end
 # Set a default password for all users
 password = '123456'
 
-# Define user parameters for the administrator user
-admin_user_params = {
-  email: "administrator@example.com",
-  password: password,
-  password_confirmation: password,
-}
-
-# Create the administrator user
-administrator = create_user(admin_user_params)
-
-# Create an Administrator record associated with the administrator user
-Administrator.create!(user: administrator)
-
 # Create 10 common user records with similar parameters
 (1..10).each do |i|
   # Define common user parameters for creating a new common user
@@ -34,3 +21,16 @@ Administrator.create!(user: administrator)
   # Create a new common user
   create_user(common_user_params)
 end
+
+# Define user parameters for the administrator user
+admin_user_params = {
+  email: "administrator@example.com",
+  password: password,
+  password_confirmation: password,
+}
+
+# Create the administrator user
+administrator = create_user(admin_user_params)
+
+# Create an Administrator record associated with the administrator user
+Administrator.create!(user: administrator)
