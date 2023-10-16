@@ -38,7 +38,7 @@ module Api::V1
     private
       # Only allow a list of trusted parameters through.
       def company_params
-        params.require(:company)
+        params.require(:company).permit(:cnpj, :business_name)
       end
   end
 end
