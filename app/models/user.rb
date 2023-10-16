@@ -8,7 +8,6 @@ class User < ApplicationRecord
 
   # Associations
   has_one :administrator, dependent: :destroy
-  has_one :manager, dependent: :destroy
 
   # Method to check if the user is an administrator
   def is_administrator?
