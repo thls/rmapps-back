@@ -1,5 +1,7 @@
 module Api::V1
   class EquipmentController < BaseController
+    load_and_authorize_resource :company, only: :create
+
     # GET /equipment
     def index
       render json: @equipment.page(params[:page])
@@ -12,7 +14,7 @@ module Api::V1
 
     # POST /equipment
     def create
-      @equipment = Equipment.new(equipment_params)
+      @equipment = @company.equipment.build(equipment_params)
 
       if @equipment.save
         render json: @equipment, status: :created
@@ -38,7 +40,7 @@ module Api::V1
     private
       # Only allow a list of trusted parameters through.
       def equipment_params
-        params.require(:equipment)
+        params.require(:equipment).permit(:name, :acquisition_date, :serial_number, :user_id)
       end
   end
 end
