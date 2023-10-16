@@ -16,4 +16,7 @@ class Company < ApplicationRecord
 
   # Define a has_one_attached association for logo images using Active Storage
   has_one_attached :logo
+
+  # Associations
+  has_many :equipment, dependent: :destroy
 end
